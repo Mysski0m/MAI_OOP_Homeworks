@@ -1,5 +1,5 @@
 #include "trapezoid.h"
-
+ 
 namespace figure {
 
     Trapezoid::Trapezoid() {

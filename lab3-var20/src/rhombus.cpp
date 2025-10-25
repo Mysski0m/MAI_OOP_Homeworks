@@ -1,5 +1,5 @@
 #include "rhombus.h"
-
+ 
 namespace figure {
 
     Rhombus::Rhombus() {

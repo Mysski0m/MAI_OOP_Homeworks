@@ -1,6 +1,6 @@
 #pragma once
 #include "figure.h"
-
+ 
 namespace figure {
     class Rhombus : public Figure {
         private:

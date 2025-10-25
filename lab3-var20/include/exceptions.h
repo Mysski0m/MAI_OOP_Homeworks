@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 #include <string>
-
+ 
 namespace exception {
     class InvalidPointException: std::runtime_error {
     public:

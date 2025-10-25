@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <cmath>
-
+ 
 namespace figure {
     constexpr const double EPS = 1e-9;
     constexpr const int8_t TRAPEZVERTICESCNT = 4;

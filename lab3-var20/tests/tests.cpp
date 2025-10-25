@@ -3,7 +3,7 @@
 #include "rhombus.h"
 #include "pentagon.h"
 #include "vector.h"
-
+ 
 using namespace figure;
 using namespace vector;
 

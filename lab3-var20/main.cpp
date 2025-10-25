@@ -4,7 +4,7 @@
 #include "trapezoid.h"
 #include "vector.h"
 #include <iostream>
-
+ 
 int main() {
     vector::Vector figures;
     int com_type;

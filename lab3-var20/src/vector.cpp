@@ -1,5 +1,5 @@
 #include "vector.h"
-
+ 
 
 namespace vector {
     const int8_t START_MEMORY_ALLOCATE = 10;

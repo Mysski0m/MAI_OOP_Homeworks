@@ -7,7 +7,7 @@
 #include <utility>
 #include <cstdlib>
 #include "figure.h"
-
+ 
 namespace vector {
     const int8_t START_CAPACITY = 10;
 

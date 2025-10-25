@@ -1,5 +1,5 @@
 #include "pentagon.h"
-
+ 
 namespace figure {
 
     Pentagon::Pentagon() {
