@@ -1,38 +1,39 @@
 #pragma once
+
 #include "figure.h"
 
 namespace figure {
-    class Trapezoid : public Figure {
-        private:
-            Point vertices[TRAPEZVERTICESCNT];
+class Trapezoid : public Figure {
+private:
+  Point vertices[TRAPEZ_VERTICES_CNT];
 
-        public:
-            Trapezoid();
+public:
+  Trapezoid();
 
-            Trapezoid(const Point& p1, const Point& p2, const Point& p3, const Point& p4);
+  Trapezoid(const Point &p1, const Point &p2, const Point &p3, const Point &p4);
 
-            Trapezoid(const Trapezoid& other) = default;
+  Trapezoid(const Trapezoid &other) = default;
 
-            Trapezoid& operator=(const Trapezoid& other) = default;
+  Trapezoid &operator=(const Trapezoid &other) = default;
 
-            Trapezoid(Trapezoid&& other) noexcept = default;
+  Trapezoid(Trapezoid &&other) noexcept = default;
 
-            Trapezoid& operator=(Trapezoid&& other) noexcept = default;
+  Trapezoid &operator=(Trapezoid &&other) noexcept = default;
 
-            ~Trapezoid() = default;
+  ~Trapezoid() = default;
 
-            bool operator==(const Trapezoid& other) const;
+  bool operator==(const Trapezoid &other) const;
 
-            bool operator!=(const Trapezoid& other) const;
+  bool operator!=(const Trapezoid &other) const;
 
-            Point GeomCenter() const override;
+  Point GeomCenter() const override;
 
-            double Area() const override;
+  double Area() const override;
 
-            operator double() const override;
+  operator double() const override;
 
-            void Print(std::ostream& os) const override;
+  void Print(std::ostream &os) const override;
 
-            void Read(std::istream& is) override;
-    };
-}
+  void Read(std::istream &is) override;
+};
+} // namespace figure
