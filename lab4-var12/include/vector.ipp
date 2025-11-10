@@ -5,18 +5,30 @@
 #include <memory>
 
 namespace vector {
+
+template<typename T>
+struct CustDeleter {
+  void operator()(T* ptr) const {
+    delete[] ptr;
+  }
+};
+
 const int8_t START_MEMORY_ALLOCATE = 10;
 
-template <typename T> Vector<T>::Vector() : sz_(0), cap_(0) {}
+template <typename T> Vector<T>::Vector() : sz_(0), cap_(0), arr_(nullptr, CustDeleter<T>{}) {}
 
 template <typename T>
 Vector<T>::Vector(std::initializer_list<T> init)
     : sz_(init.size()), cap_(init.size()) {
-  arr_ = std::shared_ptr<T[]>(new T[init.size()]);
+  if (sz_ > 0) {
+  arr_ = std::shared_ptr<T[]>(new T[init.size()], CustDeleter<T>{});
   size_t i = 0;
   for (const T &fig : init) {
     arr_[i] = fig;
     ++i;
+  }
+  } else {
+    arr_ = std::shared_ptr<T[]>(nullptr, CustDeleter<T>{});
   }
 }
 
@@ -64,7 +76,7 @@ template <typename T> void Vector<T>::Reserve(size_t new_cap) {
   if (new_cap <= cap_) {
     return;
   }
-  auto new_arr = std::shared_ptr<T[]>(new T[new_cap]);
+  auto new_arr = std::shared_ptr<T[]>(new T[new_cap], CustDeleter<T>{});
   for (size_t i = 0; i < sz_; i++) {
     new_arr[i] = std::move(arr_[i]);
   }
