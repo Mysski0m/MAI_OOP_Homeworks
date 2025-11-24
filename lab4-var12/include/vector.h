@@ -68,6 +68,11 @@ private:
   std::shared_ptr<T[]> arr_;
   size_t sz_;
   size_t cap_;
+  inline static void Deleter(T* ptr) {
+    if (ptr) {
+      delete[] ptr;
+    }
+  }
 };
 
 template <typename T>
